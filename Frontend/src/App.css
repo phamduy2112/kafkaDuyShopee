@@ -1,0 +1,54 @@
+
+.w-center{
+  width: 80%;
+  margin: auto;
+}
+li{
+  list-style: none;
+ 
+}
+
+.smartwatch-card {
+  width: 300px;
+  padding: 20px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #f0e9f8, #dbeafd);
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.smartwatch-card h4 {
+  color: #666;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.smartwatch-card h2 {
+  color: #111;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.smartwatch-card a {
+  color: #333;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.smartwatch-card img {
+  width: 100%;
+  max-width: 200px;
+  margin: 20px 0;
+}
+
+.smartwatch-card .discount-text {
+  font-size: 14px;
+  color: #999;
+  letter-spacing: 1px;
+}

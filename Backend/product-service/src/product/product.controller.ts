@@ -8,9 +8,13 @@ import { MessagePattern } from '@nestjs/microservices';
 export class ProductController {
   constructor(private readonly productService: ProductService) {}
 
-  @Post()
-  create(@Body() createProductDto: CreateProductDto) {
-    return this.productService.create(createProductDto);
+
+
+  @MessagePattern("create-product")
+  create(@Body() createProductDto) {
+    const { name, description, price, quantity, category_id, files } = createProductDto;
+
+    return this.productService.create(name, description, price, quantity, category_id, files);
   }
 
   @MessagePattern("get-all-products")
@@ -18,18 +22,19 @@ export class ProductController {
     return this.productService.findAll();
   }
 
-  @Get(':id')
+
+  @MessagePattern("get-product-id")
   findOne(@Param('id') id: string) {
     return this.productService.findOne(+id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateProductDto: UpdateProductDto) {
-    return this.productService.update(+id, updateProductDto);
+
+  @MessagePattern("update-product")
+  update(updateProductDto) {
+    const {id, name, description, price, quantity, category_id, files } = updateProductDto;
+
+    return this.productService.update(+id, name, description, price, quantity, category_id, files);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.productService.remove(+id);
-  }
+
 }
